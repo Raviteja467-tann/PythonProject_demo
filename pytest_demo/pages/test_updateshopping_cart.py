@@ -15,9 +15,9 @@ class update_shopping_cart:
 
     def selectanitem(self):
         self.baseclass.click(*self.element.clickonitem)
-        time.sleep(2)
+        self.baseclass.implicit_wait()
         self.baseclass.click(*self.element.clickonaddtocart)
-        time.sleep(2)
+        time.sleep(3)
         self.baseclass.explicit_wait_visibility_element_located(*self.element.shopping_cart_link)
         self.baseclass.click(*self.element.shopping_cart_link)
         self.baseclass.click(*self.element.cart_items_checkboxes)
