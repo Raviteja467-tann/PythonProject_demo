@@ -54,3 +54,7 @@ class locators:
     clickonaddtocart=(By.XPATH,"//input[@class='button-1 add-to-cart-button']")
     clickonupdateshoppingcart=(By.XPATH,"//input[@name='updatecart']")
     shoppingcartempty=(By.XPATH,"//div[@class='page-body']/div")
+
+    #Basic login functionality
+    login_home_page=(By.XPATH,"//a[text()='Log in']")
+    verify_email=(By.XPATH,"//a[text()='user467@gmail.com']")

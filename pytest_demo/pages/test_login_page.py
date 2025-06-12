@@ -25,10 +25,6 @@ class Loginpage:
 
     def login(self,username,password):
         self.logger.info("enter username and password")
-        # bookspage=Bookspage(self.driver)
-        # bookspage.test_launchurl()
-        # self.driver.find_element(By.XPATH,"//a[text()='Log in']").click()
-
         self.baseclass.send_keys(*self.element.username, username)
         self.baseclass.send_keys(*self.element.password,password)
         self.baseclass.click(*self.element.login)
