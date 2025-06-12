@@ -24,7 +24,7 @@ class Bookspage:
 
     def test_book(self):
         self.baseclass.click(*self.element.book)
-        self.logger("---------fetch list of book items-----------")
+        self.logger.info("---------fetch list of book items-----------")
         books_list=self.driver.find_elements(*self.element.books_list)
         book_data = []
         #taking the list of book items on the page

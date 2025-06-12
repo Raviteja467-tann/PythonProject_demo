@@ -37,5 +37,5 @@ class Register:
         print(complete_text)
         self.driver.get_screenshot_as_file(os.path.join(os.path.dirname(os.path.dirname(__file__)), "reports","test_registration"))
         time.sleep(2)
-        assert "Your registration completeds" == complete_text
+        assert "Your registration completed" == complete_text
 

@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 
 from pytest_demo.locators.locators import locators
@@ -13,7 +15,10 @@ class update_shopping_cart:
 
     def selectanitem(self):
         self.baseclass.click(*self.element.clickonitem)
+        time.sleep(2)
         self.baseclass.click(*self.element.clickonaddtocart)
+        time.sleep(2)
+        self.baseclass.explicit_wait_visibility_element_located(*self.element.shopping_cart_link)
         self.baseclass.click(*self.element.shopping_cart_link)
         self.baseclass.click(*self.element.cart_items_checkboxes)
 
