@@ -16,9 +16,7 @@ def test_url(open_browser,username,password):
     bookspage.test_cart_list_checkbox()
     bookspage.test_checkout()
     loginpage.login(username, password)
-    # bookspage.test_cart_list_checkbox()
-    # bookspage.test_checkout()
-    # bookspage.test_checkout_billing()
+
 
 
 

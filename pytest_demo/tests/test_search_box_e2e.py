@@ -14,8 +14,4 @@ def test_search_box(open_browser,username,password):
     loginpage.test_launchurl()
     search = Homepage_search(driver)
     search.test_search()
-    bookspage = Bookspage(driver)
     loginpage.login(username, password)
-    # bookspage.test_cart_list_checkbox()
-    # bookspage.test_checkout()
-    # bookspage.test_checkout_billing()

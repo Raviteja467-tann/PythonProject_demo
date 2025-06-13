@@ -9,7 +9,7 @@ class locators:
     #login page class
     username = (By.ID,"Email")
     password = (By.ID, "Password")
-    login = (By.XPATH,"//input[@class='button-1 login-button']")
+    loginbutton = (By.XPATH,"//input[@class='button-1 login-button']")
     shoppingcarttext = (By.XPATH, "//div/h1[text()='Shopping cart']")
     errormesssagetext = (By.XPATH,"//div/span[text()='Login was unsuccessful. Please correct the errors and try again.']")
 
