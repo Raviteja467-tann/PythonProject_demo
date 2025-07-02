@@ -1,23 +1,52 @@
-yaml
-name: PythonProject_demo
+#yaml
+#name: PythonProject_demo
+#on:
+#  push:
+#    branches:
+#      - main
+#  pull_request:
+#    branches:
+#      - main
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - name: Checkout repository
+#      uses: actions/checkout@v2
+#    - name: Use Node.js
+#      uses: actions/setup-node@v1
+#      with:
+#        node-version: '18.x'
+#    - name: Run Yarn
+#      run: yarn
+#    - name: Run tests
+#      run: yarn test
+name: Java CI with Maven
+
 on:
   push:
     branches:
-      - main
+      - "main"
+      - "test-*"
   pull_request:
     branches:
-      - main
+      - "main"
+      - "test-*"
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      LT_USERNAME: ${{ secrets.PY_USERNAME }}
+      LT_ACCESS_KEY: ${{ secrets.PY_ACCESS_KEY }}
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '18.x'
-    - name: Run Yarn 
-      run: yarn
-    - name: Run tests
-      run: yarn test
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build and Test with Maven
+        run: mvn clean install
