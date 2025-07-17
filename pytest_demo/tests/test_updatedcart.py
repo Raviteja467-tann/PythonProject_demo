@@ -1,4 +1,4 @@
-from pytest_demo.conftest import open_browser
+#from pytest_demo.conftest import open_browser
 from pytest_demo.pages.test_login_page import Loginpage
 from pytest_demo.pages.test_updateshopping_cart import update_shopping_cart
 
